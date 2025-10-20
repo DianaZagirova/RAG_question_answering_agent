@@ -9,21 +9,25 @@ from typing import List, Dict, Optional, Tuple
 import numpy as np
 from pathlib import Path
 import json
+import torch
 
 
 class SentenceTransformerEmbeddingFunction:
     """Custom embedding function for ChromaDB using SentenceTransformers."""
     
-    def __init__(self, model):
+    def __init__(self, model, batch_size=32):
         self.model = model
+        self.batch_size = batch_size
     
     def __call__(self, input: List[str]) -> List[List[float]]:
-        """Generate embeddings for input texts."""
+        """Generate embeddings for input texts with GPU acceleration."""
         embeddings = self.model.encode(
             input,
+            batch_size=self.batch_size,
             show_progress_bar=False,
             convert_to_numpy=True,
-            normalize_embeddings=True
+            normalize_embeddings=True,
+            device=self.model.device  # Use model's device (GPU if available)
         )
         return embeddings.tolist()
 
@@ -65,19 +69,30 @@ class ScientificRAG:
         
         # Try to load scientific model, fallback to general model
         print(f"Loading embedding model: {embedding_model}")
+        
+        # Detect GPU availability
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        print(f"Using device: {device}")
+        if device == 'cuda':
+            print(f"  GPU: {torch.cuda.get_device_name(0)}")
+            print(f"  CUDA Version: {torch.version.cuda}")
+        
         try:
-            self.embedding_model = SentenceTransformer(embedding_model)
+            self.embedding_model = SentenceTransformer(embedding_model, device=device)
             self.model_name = embedding_model
             print(f"✓ Loaded {embedding_model}")
         except Exception as e:
             print(f"⚠ Could not load {embedding_model}, falling back to {backup_embedding_model}")
             print(f"  Error: {e}")
-            self.embedding_model = SentenceTransformer(backup_embedding_model)
+            self.embedding_model = SentenceTransformer(backup_embedding_model, device=device)
             self.model_name = backup_embedding_model
             print(f"✓ Loaded {backup_embedding_model}")
         
-        # Create embedding function wrapper
-        self.embedding_function = SentenceTransformerEmbeddingFunction(self.embedding_model)
+        # Create embedding function wrapper with batch processing
+        self.embedding_function = SentenceTransformerEmbeddingFunction(
+            self.embedding_model,
+            batch_size=64  # Larger batch size for GPU
+        )
         
         # Get or create collection
         try:

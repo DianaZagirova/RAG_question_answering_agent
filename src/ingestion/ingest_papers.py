@@ -5,9 +5,10 @@ import sqlite3
 import json
 import sys
 from pathlib import Path
-from typing import Optional, Generator, Dict, List
+from typing import Optional, Generator, Dict, List, Set
 from tqdm import tqdm
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -76,6 +77,9 @@ class PaperIngestionPipeline:
         }
         self.allowed_dois = set(allowed_dois) if allowed_dois else None
         self.allowed_pmids = set(allowed_pmids) if allowed_pmids else None
+        
+        # Cache for already-ingested DOIs (batch check at start)
+        self._ingested_dois_cache: Optional[Set[str]] = None
     
     def fetch_papers(
         self,
@@ -159,6 +163,25 @@ class PaperIngestionPipeline:
         
         conn.close()
     
+    def _build_ingested_dois_cache(self):
+        """Build a cache of all DOIs already in ChromaDB for fast lookup."""
+        if self._ingested_dois_cache is not None:
+            return
+        
+        print("Building cache of ingested DOIs...")
+        try:
+            # Get all DOIs from ChromaDB in one query
+            all_data = self.rag.collection.get(include=['metadatas'])
+            self._ingested_dois_cache = {
+                meta.get('doi', 'Unknown') 
+                for meta in all_data['metadatas']
+                if meta.get('doi') not in ['Unknown', 'unknown', '#N/A', None]
+            }
+            print(f"✓ Cached {len(self._ingested_dois_cache):,} ingested DOIs")
+        except Exception as e:
+            print(f"⚠ Could not build cache: {e}")
+            self._ingested_dois_cache = set()
+    
     def process_paper(self, paper: Dict) -> Optional[List[Dict]]:
         """
         Process a single paper: preprocess, chunk, and prepare for RAG.
@@ -171,16 +194,10 @@ class PaperIngestionPipeline:
         """
         doi = paper.get('doi') or paper.get('pmid') or 'unknown'
         
-        # Pre-filter: skip if this DOI already exists in ChromaDB
-        # NOTE: run_full_ingestion.py does batch checking upfront for better performance,
-        # but this safety check remains for direct pipeline usage or edge cases
-        try:
-            existing = self.rag.collection.get(where={'doi': doi}, limit=1, include=['ids'])
-            if existing and existing.get('ids'):
-                self.stats['skipped_papers'] += 1
-                return None
-        except Exception:
-            pass
+        # Fast cache-based duplicate check
+        if self._ingested_dois_cache is not None and doi in self._ingested_dois_cache:
+            self.stats['skipped_papers'] += 1
+            return None
         
         try:
             # Preprocess text
@@ -266,6 +283,9 @@ class PaperIngestionPipeline:
         print(f"Chunk size: {self.chunker.chunk_size}, Overlap: {self.chunker.chunk_overlap}")
         print(f"Embedding model: {self.rag.model_name}")
         print("="*60 + "\n")
+        
+        # Build cache of already-ingested DOIs for fast duplicate checking
+        self._build_ingested_dois_cache()
         
         # Fetch and process papers
         paper_generator = self.fetch_papers(batch_size=batch_size, limit=limit)

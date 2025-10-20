@@ -121,7 +121,14 @@ def run_full_ingestion(
         eval_cursor.execute(query)
         candidates = eval_cursor.fetchall()
         
+        # Track unique papers (not double-counting DOI+PMID)
+        unique_papers = set()
         for doi, pmid in candidates:
+            # Use DOI as primary identifier, fallback to PMID
+            paper_id = doi if doi else str(pmid)
+            unique_papers.add(paper_id)
+            
+            # Also add to separate sets for filtering
             if doi:
                 validated_dois.add(doi)
             if pmid:
@@ -130,9 +137,9 @@ def run_full_ingestion(
         eval_conn.close()
         papers_conn.close()
         
-        print(f"    ✓ Found {len(validated_dois) + len(validated_pmids)} validated papers with full text")
+        print(f"    ✓ Found {len(unique_papers):,} validated papers with full text")
         
-        if not validated_dois and not validated_pmids:
+        if not unique_papers:
             print("\n⚠️  Validated-only mode requested, but no validated papers with full text were found")
             print("   Nothing to process. Exiting.")
             return
@@ -140,35 +147,39 @@ def run_full_ingestion(
         # OPTIMIZATION 2: Batch-check Chroma for existing DOIs to exclude already-ingested
         print("  Step 2: Checking Chroma for already-ingested papers...")
         try:
-            chroma_client = chromadb.PersistentClient(
-                path=persist_dir,
-                settings=Settings(anonymized_telemetry=False)
-            )
-            collection = chroma_client.get_collection(collection_name)
+            # FAST METHOD: Query Chroma's SQLite DB directly for all unique DOIs
+            chroma_db_path = f"{persist_dir}/chroma.sqlite3"
+            chroma_conn = sqlite3.connect(chroma_db_path)
+            chroma_cursor = chroma_conn.cursor()
             
-            # Batch-check existing DOIs in Chroma (more efficient than per-paper checks)
-            existing_dois = set()
-            batch_size = 1000
-            all_candidate_dois = list(validated_dois) + list(validated_pmids)
+            # Get all unique DOIs from metadata (much faster than API calls)
+            # Chroma stores metadata in embedding_metadata table with key-value pairs
+            query = """
+                SELECT DISTINCT string_value
+                FROM embedding_metadata
+                WHERE key = 'doi'
+                  AND string_value IS NOT NULL
+                  AND string_value NOT IN ('#N/A', 'Unknown', 'unknown')
+            """
+            chroma_cursor.execute(query)
+            existing_dois_in_chroma = {row[0] for row in chroma_cursor.fetchall() if row[0]}
+            chroma_conn.close()
             
-            for i in range(0, len(all_candidate_dois), batch_size):
-                batch = all_candidate_dois[i:i + batch_size]
-                # Check each DOI in batch
-                for doi in batch:
-                    try:
-                        result = collection.get(where={'doi': doi}, limit=1, include=['ids'])
-                        if result and result.get('ids'):
-                            existing_dois.add(doi)
-                    except Exception:
-                        pass
+            print(f"    ✓ Found {len(existing_dois_in_chroma):,} unique DOIs in Chroma")
+            
+            # Fast set intersection to find which validated papers are already ingested
+            all_candidate_dois = validated_dois | validated_pmids
+            existing_dois = all_candidate_dois & existing_dois_in_chroma
             
             # Remove already-ingested DOIs from validated sets
             validated_dois -= existing_dois
             validated_pmids -= existing_dois
             
-            print(f"    ✓ Found {len(existing_dois)} already ingested, {len(validated_dois) + len(validated_pmids)} remaining")
+            # Recalculate remaining unique papers
+            remaining_papers = unique_papers - existing_dois
+            print(f"    ✓ Found {len(existing_dois):,} already ingested, {len(remaining_papers):,} remaining")
             
-            if not validated_dois and not validated_pmids:
+            if not remaining_papers:
                 print("\n✅ All validated papers are already ingested!")
                 print("   Nothing to process. Exiting.")
                 return
@@ -178,8 +189,10 @@ def run_full_ingestion(
             print(f"    → Proceeding with all {len(validated_dois) + len(validated_pmids)} validated papers")
 
     # Count papers to process (already filtered and optimized above for validated_only)
-    if validated_only and (validated_dois or validated_pmids):
-        total_available = len(validated_dois) + len(validated_pmids)
+    if validated_only and 'remaining_papers' in locals():
+        total_available = len(remaining_papers)
+    elif validated_only and unique_papers:
+        total_available = len(unique_papers)
     else:
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
@@ -198,7 +211,12 @@ def run_full_ingestion(
     
     print(f"\n📚 Papers:")
     if validated_only:
-        print(f"  Validated with full text (after Chroma check): {total_available:,}")
+        print(f"  Validated with full text: {len(unique_papers):,}")
+        if 'remaining_papers' in locals():
+            print(f"  Already ingested: {len(existing_dois):,}")
+            print(f"  Remaining to process: {len(remaining_papers):,}")
+        else:
+            print(f"  To process: {len(unique_papers):,}")
     else:
         print(f"  Available in database: {total_available:,}")
     print(f"  Will process: {papers_to_process:,}")

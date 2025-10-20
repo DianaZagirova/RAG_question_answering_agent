@@ -17,6 +17,10 @@ __pycache__
 
 #temp
 chroma_db_optimal/
+chroma_db_archive/
 **.sqlite3
 **.bin
 **.pkl
+
+#eval
+**/data/evaluations.db
