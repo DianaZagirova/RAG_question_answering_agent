@@ -1,0 +1,11 @@
+{
+  "aging_biomarker": "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?",
+  "molecular_mechanism_of_aging": "Q2: Does the paper/theory suggest a molecular mechanism of aging?",
+  "longevity_intervention_to_test": "Q3: Does the paper/theory suggest a longevity intervention to test?",
+  "aging_cannot_be_reversed": "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)",
+  "cross_species_longevity_biomarker": "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)",
+  "naked_mole_rat_lifespan_explanation": "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?",
+  "birds_lifespan_explanation": "Q7: Does the paper/theory explain why birds live much longer than mammals on average?",
+  "large_animals_lifespan_explanation": "Q8: Does the paper/theory explain why large animals live longer than small ones?",
+  "calorie_restriction_lifespan_explanation": "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?"
+}

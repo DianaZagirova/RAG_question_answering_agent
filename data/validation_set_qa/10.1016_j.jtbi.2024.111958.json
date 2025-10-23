@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper is theoretical and does not propose or test any specific measurable biomarker for aging; it focuses on mathematical models and evolutionary theory."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.85,
+    "reasoning": "The paper discusses molecular damage classes (e.g., telomere attrition, proteostasis loss, genomic instability) as mechanisms underlying aging, referencing the Hallmarks of Aging framework."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "No specific intervention is proposed for empirical testing; the paper is focused on theoretical evolutionary models, not experimental interventions."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "The paper does not claim that aging cannot be reversed; instead, it explores under what evolutionary and mechanistic conditions agelessness could theoretically evolve."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "While the paper discusses differences in aging and lifespan between species, it does not propose or imply a specific biomarker that predicts maximal lifespan across species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The naked mole rat is not discussed; the focus is on Hydra, planarians, and general principles, not on explaining the naked mole rat's longevity."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "Birds are mentioned in the context of comparative life history, but there is no specific explanation given for why birds live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses how larger animals may evolve greater cancer defense and repair mechanisms due to increased risk, referencing Peto's paradox and the evolution of repair in large-bodied species."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "Calorie restriction is not discussed in the context of lifespan extension in this paper."
+  }
+}

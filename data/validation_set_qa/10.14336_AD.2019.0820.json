@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, but not shown",
+    "confidence": 0.8,
+    "reasoning": "The paper discusses sirtuins as potential biomarkers for aging and age-related diseases and mentions their association with healthspan and disease, but does not provide direct quantitative evidence of their association with mortality or aging pace in humans."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper details molecular mechanisms by which sirtuins regulate aging, including genomic stability, DNA repair, telomere maintenance, and modulation of key signaling pathways."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses sirtuin activators (e.g., resveratrol, SRT1720, NAD+ boosters) and their potential as longevity interventions, suggesting their testing for anti-aging and age-related disease benefits."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not claim that aging cannot be reversed; instead, it focuses on delaying aging and ameliorating age-related diseases."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "While sirtuins are discussed in the context of conserved longevity pathways across species, the paper does not provide or imply a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or discussion of naked mole rats or explanations for their exceptional lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or provide explanations for their lifespan relative to mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in the context of body size or explanations for why large animals live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper explicitly discusses calorie restriction as a lifespan-extending intervention and describes sirtuins as mediators of CR's beneficial effects."
+  }
+}

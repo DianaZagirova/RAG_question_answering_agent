@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses theoretical models of aging and evolutionary adaptation but does not propose or quantitatively validate a specific measurable biomarker of aging."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses molecular mechanisms such as disruption of homeostasis, cellular senescence, inflammation, sirtuins, and FOXO transcription factors as being involved in aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The paper mentions possible interventions such as RNA-based therapies, senolytics, and caloric restriction as ways to target aging and age-related diseases."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses the possibility of interfering with or 'hacking' the aging program, suggesting that reversal or significant modification of aging is conceivable."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "While the paper discusses evolutionary models and differences in aging rates, it does not propose or provide evidence for a biomarker that predicts maximal lifespan across species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 0.8,
+    "reasoning": "The reference list includes a citation about naked mole rats and neoteny, and the discussion mentions them as examples of extreme longevity, implying possible explanations for their lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not mention birds or provide explanations for why birds live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "There is no discussion in the text about body size in relation to lifespan or why large animals might live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses caloric restriction (CR) and its correlation with increased lifespan and healthy aging, referencing relevant molecular pathways."
+  }
+}

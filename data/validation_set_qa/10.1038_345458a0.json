@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 1,
+    "reasoning": "The paper quantitatively shows that telomere length shortens with age in human fibroblasts and correlates with cellular aging, providing data and figures to support this association."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses the molecular mechanism of telomere shortening as a process contributing to cellular aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not propose or suggest any specific intervention to test for longevity; it focuses on telomere shortening and aging."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "There are no claims in the paper suggesting that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper focuses on human cells and does not discuss biomarkers predicting lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or discussion of bird lifespan or explanations for their longevity."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not discuss lifespan in relation to body size or compare large and small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction and its effects on lifespan are not mentioned in the paper."
+  }
+}

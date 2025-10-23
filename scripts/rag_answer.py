@@ -111,6 +111,22 @@ def main():
         action='store_true',
         help='Do not include sources in output (faster)'
     )
+    parser.add_argument(
+        '--save-enhanced-queries',
+        type=str,
+        help='Save enhanced queries to a JSON file'
+    )
+    parser.add_argument(
+        '--use-multi-query',
+        action='store_true',
+        help='Use multi-query retrieval (LLM-enhanced + HyDE + expanded queries) for better coverage'
+    )
+    parser.add_argument(
+        '--predefined-queries',
+        type=str,
+        default='data/queries_extended.json',
+        help='Path to JSON file with predefined queries (default: data/queries_extended.json)'
+    )
     
     args = parser.parse_args()
     
@@ -132,7 +148,8 @@ def main():
     complete_rag = CompleteRAGSystem(
         rag_system=rag,
         llm_client=llm_client,
-        default_n_results=args.n_results
+        default_n_results=args.n_results,
+        use_multi_query=args.use_multi_query
     )
     
     print("\n" + "="*70 + "\n")
@@ -148,21 +165,39 @@ def main():
             questions_data = json.load(f)
 
         questions = []
-        for idx, (question_text, options_str) in enumerate(questions_data.items(), start=1):
+        # Handle new structured format: {"key": {"question": "...", "answers": "..."}}
+        for idx, (question_key, question_obj) in enumerate(questions_data.items(), start=1):
+            if isinstance(question_obj, dict):
+                question_text = question_obj.get('question', '')
+                options_str = question_obj.get('answers', '')
+            else:
+                # Fallback for old format
+                question_text = question_key
+                options_str = question_obj
+            
             options = [opt.strip() for opt in options_str.split('/') if opt.strip()]
-            questions.append((idx, question_text, options))
+            questions.append((idx, question_text, options, question_key))
 
         results = complete_rag.answer_aging_questions(
             questions=questions,
             output_file=args.output,
             temperature=args.temperature,
-            doi=args.doi
+            doi=args.doi,
+            max_tokens=args.max_tokens
         )
         
         print("="*70)
         print(f"✓ All {len(questions)} questions answered!")
         print(f"✓ Results saved to: {args.output}")
         print("="*70 + "\n")
+        
+        # Save enhanced queries if requested
+        if args.save_enhanced_queries and rag.query_preprocessor:
+            enhanced_queries = rag.query_preprocessor.get_enhanced_queries()
+            if enhanced_queries:
+                with open(args.save_enhanced_queries, 'w') as f:
+                    json.dump(enhanced_queries, f, indent=2)
+                print(f"✓ Enhanced queries saved to: {args.save_enhanced_queries}\n")
         
     elif args.question:
         # Single question

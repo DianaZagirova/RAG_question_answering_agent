@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper discusses social-psychological changes and disengagement theory in aging, but does not propose or analyze any measurable biological or physiological biomarker associated with aging pace, mortality, or age-related conditions."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The focus is entirely on social-psychological processes and interaction patterns; there is no mention or suggestion of molecular mechanisms of aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not propose or suggest any interventions aimed at increasing longevity; it is concerned with describing and theorizing social disengagement in aging."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "While the paper describes disengagement as an 'almost universal end point' and possibly 'irreversible,' it does not explicitly claim that aging as a whole cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of biomarkers or lifespan differences between species; the study is limited to human social-psychological aging."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Naked mole rats are not mentioned or discussed in the paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The lifespan of birds or comparisons between birds and mammals are not mentioned in the text."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of body size in relation to lifespan, nor any mention of large versus small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction and its effects on lifespan are not mentioned or discussed in the paper."
+  }
+}

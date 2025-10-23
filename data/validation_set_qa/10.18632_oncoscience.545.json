@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses the hyperfunction theory of aging and signaling pathways like mTOR, but does not suggest or quantitatively validate a specific measurable biomarker of aging."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper explicitly describes the molecular mechanism of aging as being driven by hyperfunctional signaling pathways such as mTOR, rather than by the accumulation of molecular damage."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper repeatedly suggests testing rapamycin (an mTOR inhibitor) as a longevity intervention and references studies where it extended lifespan in animals."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not claim that aging cannot be reversed; instead, it discusses interventions that can slow aging and treat age-related diseases."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "There is no mention or implication of a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan in this paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or discuss why birds may live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in the context of body size or explanations for why large animals may live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "Calorie restriction is not discussed as a factor influencing lifespan in this paper."
+  }
+}

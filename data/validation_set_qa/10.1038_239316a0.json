@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 0.9,
+    "reasoning": "The abstract mentions that immunological and enzymatic assessments of lactate dehydrogenase in human fibroblasts suggest altered proteins accumulate with aging, and the figures/tables show quantitative data supporting this association."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The abstract discusses the accumulation of altered proteins and enzyme changes as mechanisms associated with aging in human fibroblasts."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no suggestion of a specific intervention to test for longevity in the abstract."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The abstract does not mention or suggest that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The abstract and text focus only on human fibroblasts and do not discuss biomarkers predicting lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention of naked mole rats or explanations for their lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention of birds or their lifespan in the abstract or text."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in relation to body size or large animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned in the context of lifespan in the abstract or text."
+  }
+}

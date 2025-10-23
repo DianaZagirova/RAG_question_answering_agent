@@ -2,8 +2,8 @@
 .env_back
 
 
-documentation/
-docs/
+# documentation/
+# docs/
 test_chroma_db/
 chroma_db/
 test_e2e_db/
@@ -24,3 +24,8 @@ chroma_db_archive/
 
 #eval
 **/data/evaluations.db
+rag_results_fast.db
+prefetch_cache
+
+#rag files 
+rag_results/

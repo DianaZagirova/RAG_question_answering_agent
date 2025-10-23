@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 0.95,
+    "reasoning": "The paper quantitatively shows that the proportion of heat-labile glucose-6-phosphate dehydrogenase (G6PD) in human fibroblasts correlates with cellular aging and senescence in vitro, providing evidence for its use as an aging biomarker."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The paper discusses the accumulation of altered enzymes, specifically heat-labile G6PD, as a molecular mechanism contributing to cellular aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 0.7,
+    "reasoning": "The paper tests the effect of 5-fluorouracil (FU) on the accumulation of altered enzymes and suggests that interventions affecting protein synthesis fidelity could influence aging."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not claim that aging cannot be reversed; it focuses on mechanisms and experimental interventions."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper only discusses human fibroblasts and does not address biomarkers predicting lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention of naked mole rats or explanations for their lifespan in the paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not discuss birds or their lifespan."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not discuss lifespan in the context of body size or large animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned in the context of lifespan in this paper."
+  }
+}

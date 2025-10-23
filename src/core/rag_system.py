@@ -10,6 +10,7 @@ import numpy as np
 from pathlib import Path
 import json
 import torch
+from .query_preprocessor import QueryPreprocessor, preprocess_for_scientific_papers
 
 
 class SentenceTransformerEmbeddingFunction:
@@ -43,7 +44,8 @@ class ScientificRAG:
         collection_name: str = "scientific_papers_optimal",
         persist_directory: str = "./chroma_db_optimal",
         embedding_model: str = "allenai/specter2",
-        backup_embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+        backup_embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
+        use_query_preprocessing: bool = True
     ):
         """
         Initialize the RAG system.
@@ -53,10 +55,14 @@ class ScientificRAG:
             persist_directory: Directory to persist the database
             embedding_model: Model for creating embeddings (scientific papers optimized)
             backup_embedding_model: Fallback model if primary is unavailable
+            use_query_preprocessing: Whether to use advanced query preprocessing
         """
         self.collection_name = collection_name
         self.persist_directory = Path(persist_directory)
         self.persist_directory.mkdir(exist_ok=True)
+        self.use_query_preprocessing = use_query_preprocessing
+        # Note: LLM client will be set later via set_llm_client() for advanced preprocessing
+        self.query_preprocessor = QueryPreprocessor(use_cache=True) if use_query_preprocessing else None
         
         # Initialize ChromaDB client
         self.client = chromadb.PersistentClient(
@@ -153,21 +159,56 @@ class ScientificRAG:
         self,
         query_text: str,
         n_results: int = 10,
-        filter_dict: Optional[Dict] = None
+        filter_dict: Optional[Dict] = None,
+        use_preprocessing: Optional[bool] = None,
+        use_multi_query: bool = False,
+        predefined_queries: Optional[List[str]] = None
     ) -> Dict:
         """
-        Query the RAG system for relevant chunks.
+        Query the RAG system for relevant chunks with optional preprocessing.
         
         Args:
             query_text: The question or query
             n_results: Number of results to return
             filter_dict: Optional metadata filters (e.g., {'section': 'Results'})
+            use_preprocessing: Override default preprocessing setting
+            use_multi_query: Use multiple query variants for better coverage
+            predefined_queries: List of predefined query variants (bypasses LLM enhancement)
             
         Returns:
             Dictionary containing results with documents, metadata, and distances
         """
+        # If predefined queries provided, use them directly (no LLM enhancement)
+        if predefined_queries:
+            return self._query_with_predefined_variants(predefined_queries, n_results, filter_dict)
+        
+        # Apply query preprocessing if enabled
+        if use_preprocessing is None:
+            use_preprocessing = self.use_query_preprocessing
+        
+        # Multi-query retrieval: use multiple query variants
+        if use_multi_query and use_preprocessing and self.query_preprocessor and self.query_preprocessor.llm_client:
+            return self._multi_query_retrieval(query_text, n_results, filter_dict)
+        
+        # Single query with preprocessing
+        processed_query = query_text
+        if use_preprocessing and self.query_preprocessor:
+            # Use LLM enhancement if available (best for matching scientific text)
+            if self.query_preprocessor.llm_client:
+                preprocessed = self.query_preprocessor.preprocess_query(
+                    query_text,
+                    use_llm_enhancement=True,
+                    use_expansion=False,
+                    use_contextualization=False,
+                    use_hyde=False
+                )
+                processed_query = preprocessed['processed_query']
+            else:
+                # Fallback to simple preprocessing
+                processed_query = preprocess_for_scientific_papers(query_text)
+        
         results = self.collection.query(
-            query_texts=[query_text],
+            query_texts=[processed_query],
             n_results=n_results,
             where=filter_dict,
             include=['documents', 'metadatas', 'distances']
@@ -177,7 +218,154 @@ class ScientificRAG:
             'documents': results['documents'][0],
             'metadatas': results['metadatas'][0],
             'distances': results['distances'][0],
-            'ids': results['ids'][0]
+            'ids': results['ids'][0],
+            'processed_query': processed_query,
+            'query_variants_used': 1
+        }
+    
+    def _query_with_predefined_variants(
+        self,
+        predefined_queries: List[str],
+        n_results: int,
+        filter_dict: Optional[Dict]
+    ) -> Dict:
+        """
+        Query using predefined query variants (no LLM enhancement).
+        Retrieves top chunks from each variant and returns unique results.
+        
+        Args:
+            predefined_queries: List of predefined query strings
+            n_results: Total number of unique results to return
+            filter_dict: Optional metadata filters
+            
+        Returns:
+            Dictionary with unique documents, metadata, and distances
+        """
+        all_results = {}  # id -> (doc, metadata, distance, query_index)
+        
+        # Retrieve from each predefined query variant
+        per_query_results = 12  # Retrieve top 12 from each query
+        
+        for query_idx, query_variant in enumerate(predefined_queries):
+            results = self.collection.query(
+                query_texts=[query_variant],
+                n_results=per_query_results,
+                where=filter_dict,
+                include=['documents', 'metadatas', 'distances']
+            )
+            
+            for doc, meta, dist, doc_id in zip(
+                results['documents'][0],
+                results['metadatas'][0],
+                results['distances'][0],
+                results['ids'][0]
+            ):
+                # Keep best score for each unique document
+                if doc_id not in all_results or dist < all_results[doc_id][2]:
+                    all_results[doc_id] = (doc, meta, dist, query_idx)
+        
+        # Sort by distance and take top n_results unique chunks
+        sorted_results = sorted(all_results.items(), key=lambda x: x[1][2])[:n_results]
+        
+        # Unpack results
+        documents = [r[1][0] for r in sorted_results]
+        metadatas = [r[1][1] for r in sorted_results]
+        distances = [r[1][2] for r in sorted_results]
+        ids = [r[0] for r in sorted_results]
+        
+        return {
+            'documents': documents,
+            'metadatas': metadatas,
+            'distances': distances,
+            'ids': ids,
+            'processed_query': f"Predefined queries ({len(predefined_queries)} variants)",
+            'query_variants_used': len(predefined_queries),
+            'unique_chunks': len(documents)
+        }
+    
+    def _multi_query_retrieval(
+        self,
+        query_text: str,
+        n_results: int,
+        filter_dict: Optional[Dict]
+    ) -> Dict:
+        """
+        Multi-query retrieval: Run multiple query variants and merge results.
+        This improves coverage by retrieving from different perspectives.
+        
+        Strategy:
+        1. Original question
+        2. LLM-enhanced (scientific style)
+        3. HyDE (hypothetical answer)
+        4. Expanded with synonyms
+        """
+        # Generate query variants
+        preprocessed = self.query_preprocessor.preprocess_query(
+            query_text,
+            use_llm_enhancement=True,
+            use_expansion=True,
+            use_contextualization=True,
+            use_hyde=True
+        )
+        
+        query_variants = []
+        
+        # 1. Enhanced query (primary)
+        if preprocessed.get('enhanced_query'):
+            query_variants.append(('enhanced', preprocessed['enhanced_query']))
+        
+        # 2. HyDE document (hypothetical answer)
+        if preprocessed.get('hyde_document'):
+            query_variants.append(('hyde', preprocessed['hyde_document']))
+        
+        # 3. Original query
+        query_variants.append(('original', query_text))
+        
+        # 4. Expanded query (with synonyms)
+        if preprocessed.get('processed_query') != query_text:
+            query_variants.append(('expanded', preprocessed['processed_query']))
+        
+        # Retrieve from each variant
+        all_results = {}  # id -> (doc, metadata, distance, source_variant)
+        
+        # Retrieve more from each variant, then merge
+        per_variant_results = max(n_results // len(query_variants), 5)
+        
+        for variant_name, variant_query in query_variants:
+            results = self.collection.query(
+                query_texts=[variant_query],
+                n_results=per_variant_results * 2,  # Get more to ensure diversity
+                where=filter_dict,
+                include=['documents', 'metadatas', 'distances']
+            )
+            
+            for doc, meta, dist, doc_id in zip(
+                results['documents'][0],
+                results['metadatas'][0],
+                results['distances'][0],
+                results['ids'][0]
+            ):
+                # Keep best score for each unique document
+                if doc_id not in all_results or dist < all_results[doc_id][2]:
+                    all_results[doc_id] = (doc, meta, dist, variant_name)
+        
+        # Sort by distance and take top n_results
+        sorted_results = sorted(all_results.items(), key=lambda x: x[1][2])[:n_results]
+        
+        # Unpack results
+        documents = [r[1][0] for r in sorted_results]
+        metadatas = [r[1][1] for r in sorted_results]
+        distances = [r[1][2] for r in sorted_results]
+        ids = [r[0] for r in sorted_results]
+        
+        return {
+            'documents': documents,
+            'metadatas': metadatas,
+            'distances': distances,
+            'ids': ids,
+            'processed_query': preprocessed.get('enhanced_query', query_text),
+            'query_variants_used': len(query_variants),
+            'query_variants': [v[0] for v in query_variants]
         }
     
     def query_with_reranking(
@@ -221,7 +409,9 @@ class ScientificRAG:
         question: str,
         n_context_chunks: int = 5,
         include_metadata: bool = True,
-        metadata_filter: Optional[Dict] = None
+        metadata_filter: Optional[Dict] = None,
+        use_multi_query: bool = False,
+        predefined_queries: Optional[List[str]] = None
     ) -> Dict:
         """
         Answer a question using retrieved context.
@@ -236,11 +426,12 @@ class ScientificRAG:
             Dictionary with question, context, and metadata
         """
         # Retrieve relevant chunks
-        results = self.query_with_reranking(
+        results = self.query(
             query_text=question,
             n_results=n_context_chunks,
-            rerank_top_k=n_context_chunks * 2,
-            filter_dict=metadata_filter
+            filter_dict=metadata_filter,
+            use_multi_query=use_multi_query,
+            predefined_queries=predefined_queries
         )
         
         # Format context
@@ -281,16 +472,33 @@ class ScientificRAG:
             ]
         }
     
+    def set_llm_client(self, llm_client):
+        """
+        Set LLM client for advanced query preprocessing.
+        
+        Args:
+            llm_client: LLM client instance (e.g., AzureOpenAIClient)
+        """
+        if self.query_preprocessor:
+            self.query_preprocessor.llm_client = llm_client
+            print("✓ LLM client connected to query preprocessor for enhanced retrieval")
+    
     def get_statistics(self) -> Dict:
         """Get statistics about the RAG database."""
         count = self.collection.count()
         
-        return {
+        stats = {
             'collection_name': self.collection_name,
             'total_chunks': count,
             'embedding_model': self.model_name,
             'persist_directory': str(self.persist_directory)
         }
+        
+        # Add cache stats if available
+        if self.query_preprocessor:
+            stats['query_cache'] = self.query_preprocessor.get_cache_stats()
+        
+        return stats
     
     def reset_collection(self):
         """Delete and recreate the collection (use with caution!)."""

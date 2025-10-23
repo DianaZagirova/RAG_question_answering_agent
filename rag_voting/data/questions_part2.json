@@ -1,0 +1,11 @@
+{
+    "aging_biomarker":{"question":"Does paper suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)? If yes, does the text provide quantitative evidence for the association or is the suggestion qualitative or hypothetical (hypothesis/discussion only)?", "answers": "Yes, quantitatively shown / Yes, but not shown / No"},
+    "molecular_mechanism_of_aging":{"question":"Does paper suggest any molecular mechanism of aging?", "answers": "Yes / No"},
+    "longevity_intervention_to_test":{"question":"Does paper contains claim(s) suggesting a specific longevity intervention to test?", "answers": "Yes / No"},
+    "aging_cannot_be_reversed":{"question":"Does paper contains claim(s) suggesting that aging cannot be reversed?", "answers": "Yes / No"},
+    "cross_species_longevity_biomarker":{"question":"Does paper contains claim(s)/examples/implies suggesting a biomarker that predicts maximal lifespan differences between species (i.e., a cross-species longevity biomarker)?", "answers": "Yes / No"},
+    "naked_mole_rat_lifespan_explanation":{"question":"Check if there are statements about naked mole rat potentially explaining their lifespan. Does paper contains claim(s)/examples/implies explaining why potentially the naked mole rat can live a lot of years (despite its small size)?", "answers": "Yes / No"},
+    "birds_lifespan_explanation":{"question":"Check if lifespan of birds are mentioned. Does paper contains claim(s)/examples/implies explaining why potentially birds (or some specific species) live  longer than mammals (on average)? ", "answers": "Yes / No"},
+    "large_animals_lifespan_explanation":{"question":"Check if lifespan is mentioned in the context of body size. Does paper contains claim(s)/examples/implies explaining why potentially large animals (or some species) live longer than small ones (or some species)?", "answers": "Yes / No"},
+    "calorie_restriction_lifespan_explanation":{"question":"Check if calorie restriction (CR) is mentioned in the context of lifespan. Does paper contains claim(s)/examples/implies explaining why potentially calorie restriction (CR) increases the lifespan of vertebrates (or some species)?", "answers": "Yes / No"}
+}

@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 0.9,
+    "reasoning": "The paper provides quantitative data showing that PQQ extends mean lifespan by 33.1% in C. elegans and measures related physiological markers such as locomotion, fat accumulation, and ROS levels."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses the roles of the insulin/IGF1 signaling pathway and autophagy in mediating the anti-aging effects of PQQ, implicating these as molecular mechanisms."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper specifically tests and suggests PQQ as a longevity intervention in C. elegans."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no claim or suggestion in the abstract or summary that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The study is limited to C. elegans and does not discuss biomarkers predicting lifespan differences across species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention of naked mole rats or explanations for their lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Birds or their lifespan are not mentioned or discussed in the provided text."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of body size or lifespan in the context of large versus small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned in the context of lifespan or longevity in the provided text."
+  }
+}

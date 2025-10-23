@@ -170,8 +170,19 @@ class PaperIngestionPipeline:
         
         print("Building cache of ingested DOIs...")
         try:
+            # Check if collection has any documents first
+            count = self.rag.collection.count()
+            if count == 0:
+                print("✓ Collection is empty, no DOIs to cache")
+                self._ingested_dois_cache = set()
+                return
+            
             # Get all DOIs from ChromaDB in one query
-            all_data = self.rag.collection.get(include=['metadatas'])
+            # Use limit parameter to avoid "kth out of bounds" error
+            all_data = self.rag.collection.get(
+                limit=count,  # Get exactly the number of items in collection
+                include=['metadatas']
+            )
             self._ingested_dois_cache = {
                 meta.get('doi', 'Unknown') 
                 for meta in all_data['metadatas']

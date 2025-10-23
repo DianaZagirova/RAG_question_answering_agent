@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, but not shown",
+    "confidence": 0.8,
+    "reasoning": "The paper discusses autophagic flux and related markers (e.g., LC3, p62, mitophagy markers) as potential indicators of aging and neurodegeneration, but does not provide quantitative evidence directly associating these with mortality or age-related conditions in a biomarker context."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper details molecular mechanisms linking autophagy impairment, mitochondrial dysfunction, NAD+ depletion, and cellular senescence to aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper suggests testing autophagy-enhancing interventions (e.g., small molecules, mTOR inhibitors) as potential therapies for aging and neurodegeneration."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper discusses reversing aging phenotypes via autophagy upregulation and does not claim that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "While some cross-species aspects of autophagy decline are mentioned, the paper does not propose or exemplify a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned in the text."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of bird lifespan or why birds live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Lifespan in the context of body size or large versus small animals is not discussed."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "Calorie restriction is briefly mentioned in the context of mTOR and autophagy, but not specifically as an explanation for increased lifespan in vertebrates."
+  }
+}

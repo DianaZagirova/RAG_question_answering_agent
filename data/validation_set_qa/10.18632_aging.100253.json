@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper discusses molecular pathways and theories of aging but does not propose or provide evidence for a specific measurable biomarker reflecting aging pace or health state."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses the TOR-centric model, describing molecular mechanisms involving nutrient-sensing pathways such as mTOR in driving aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper suggests interventions such as rapamycin and calorie restriction to extend healthspan and lifespan by targeting the TOR pathway."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper argues that aging may be suppressed pharmacologically and discusses interventions to extend healthy lifespan, not that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no claim or example of a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan in this paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or explanation of why birds or specific bird species live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not discuss lifespan in the context of body size or explain why large animals may live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper explicitly explains that calorie restriction prolongs lifespan by reducing activation of the TOR pathway, which drives aging."
+  }
+}

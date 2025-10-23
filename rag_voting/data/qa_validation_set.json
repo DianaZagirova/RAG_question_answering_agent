@@ -1,0 +1,62 @@
+[
+  {
+    "doi": "10.1016/j.arr.2021.101557",
+    "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?": "Yes",
+    "Q2: Does the paper/theory suggest a molecular mechanism of aging?": "Yes",
+    "Q3: Does the paper/theory suggest a longevity intervention to test?": "Yes",
+    "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)": "No",
+    "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)": "No",
+    "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?": "No",
+    "Q7: Does the paper/theory explain why birds live much longer than mammals on average?": "No",
+    "Q8: Does the paper/theory explain why large animals live longer than small ones?": "Yes",
+    "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?": "Yes"
+  },
+  {
+    "doi": "10.1016/j.tree.2022.08.003",
+    "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?": "No",
+    "Q2: Does the paper/theory suggest a molecular mechanism of aging?": "No",
+    "Q3: Does the paper/theory suggest a longevity intervention to test?": "No",
+    "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)": "No",
+    "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)": "No",
+    "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?": "Yes",
+    "Q7: Does the paper/theory explain why birds live much longer than mammals on average?": "Yes",
+    "Q8: Does the paper/theory explain why large animals live longer than small ones?": "Yes",
+    "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?": "Yes"
+  },
+  {
+    "doi": "10.14336/AD.2025.0541",
+    "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?": "Yes",
+    "Q2: Does the paper/theory suggest a molecular mechanism of aging?": "Yes",
+    "Q3: Does the paper/theory suggest a longevity intervention to test?": "Yes",
+    "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)": "No",
+    "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)": "Yes",
+    "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?": "No",
+    "Q7: Does the paper/theory explain why birds live much longer than mammals on average?": "Yes",
+    "Q8: Does the paper/theory explain why large animals live longer than small ones?": "Yes",
+    "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?": "Yes"
+  },
+  {
+    "doi": "10.1038/s43587-023-00527-6",
+    "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?": "Yes",
+    "Q2: Does the paper/theory suggest a molecular mechanism of aging?": "Yes",
+    "Q3: Does the paper/theory suggest a longevity intervention to test?": "Yes",
+    "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)": "No",
+    "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)": "Yes",
+    "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?": "Yes",
+    "Q7: Does the paper/theory explain why birds live much longer than mammals on average?": "No",
+    "Q8: Does the paper/theory explain why large animals live longer than small ones?": "No",
+    "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?": "No"
+  },
+  {
+    "doi": "10.1016/j.arr.2024.102310",
+    "Q1: Does the paper/theory suggest an aging biomarker (i.e. measurable entity reflecting the pace of aging or organism health state, associated with mortality or age-related conditions)?": "Yes",
+    "Q2: Does the paper/theory suggest a molecular mechanism of aging?": "Yes",
+    "Q3: Does the paper/theory suggest a longevity intervention to test?": "Yes",
+    "Q4: Does the paper/theory claim that aging cannot be reversed? (Yes / No)": "No",
+    "Q5: Does the paper/theory suggest a biomarker that explains differences in maximum lifespan between species? (Yes / No)": "No",
+    "Q6: Does the paper/theory explain why the naked mole rat can live 40+ years despite its small size?": "No",
+    "Q7: Does the paper/theory explain why birds live much longer than mammals on average?": "No",
+    "Q8: Does the paper/theory explain why large animals live longer than small ones?": "No",
+    "Q9: Does the paper/theory explain why calorie restriction increases the lifespan of vertebrates?": "No"
+  }
+]

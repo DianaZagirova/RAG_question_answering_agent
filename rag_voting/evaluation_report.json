@@ -1,0 +1,226 @@
+{
+  "standard_validation": {
+    "fulltext_accuracy": 0.6666666666666666,
+    "rag_accuracy": 0.5833333333333334,
+    "fulltext_stats": {
+      "aging_biomarker": {
+        "correct": 1,
+        "total": 5
+      },
+      "aging_cannot_be_reversed": {
+        "correct": 5,
+        "total": 5
+      },
+      "naked_mole_rat_lifespan_explanation": {
+        "correct": 4,
+        "total": 5
+      },
+      "birds_lifespan_explanation": {
+        "correct": 4,
+        "total": 5
+      },
+      "large_animals_lifespan_explanation": {
+        "correct": 3,
+        "total": 5
+      },
+      "calorie_restriction_lifespan_explanation": {
+        "correct": 3,
+        "total": 5
+      }
+    },
+    "rag_stats": {
+      "aging_biomarker": {
+        "correct": 1,
+        "total": 2
+      },
+      "aging_cannot_be_reversed": {
+        "correct": 2,
+        "total": 2
+      },
+      "naked_mole_rat_lifespan_explanation": {
+        "correct": 1,
+        "total": 2
+      },
+      "birds_lifespan_explanation": {
+        "correct": 1,
+        "total": 2
+      },
+      "large_animals_lifespan_explanation": {
+        "correct": 1,
+        "total": 2
+      },
+      "calorie_restriction_lifespan_explanation": {
+        "correct": 1,
+        "total": 2
+      }
+    },
+    "strategies": {
+      "fulltext_only": {
+        "correct": 20,
+        "total": 30,
+        "description": "Use fulltext answers only",
+        "accuracy": 0.6666666666666666
+      },
+      "rag_only": {
+        "correct": 7,
+        "total": 12,
+        "description": "Use RAG answers only",
+        "accuracy": 0.5833333333333334
+      },
+      "rag_yes_override": {
+        "correct": 9,
+        "total": 12,
+        "description": "Use fulltext, but if RAG says Yes, trust RAG",
+        "accuracy": 0.75
+      },
+      "rag_no_override": {
+        "correct": 7,
+        "total": 12,
+        "description": "Use fulltext, but if RAG says No, trust RAG",
+        "accuracy": 0.5833333333333334
+      },
+      "agree_only": {
+        "correct": 7,
+        "total": 10,
+        "description": "Use answer only when both agree, otherwise abstain",
+        "accuracy": 0.7
+      },
+      "majority_with_confidence": {
+        "correct": 20,
+        "total": 30,
+        "description": "Use RAG if confidence > 0.9, else fulltext",
+        "accuracy": 0.6666666666666666
+      },
+      "question_specific": {
+        "correct": 20,
+        "total": 27,
+        "description": "Use best performer per question type",
+        "accuracy": 0.7407407407407407
+      },
+      "conservative": {
+        "correct": 7,
+        "total": 12,
+        "description": "Prefer No unless both say Yes",
+        "accuracy": 0.5833333333333334
+      },
+      "optimistic": {
+        "correct": 9,
+        "total": 12,
+        "description": "Prefer Yes if either says Yes",
+        "accuracy": 0.75
+      }
+    }
+  },
+  "extended_validation": {
+    "fulltext_accuracy": 0.673202614379085,
+    "rag_accuracy": 0.6976744186046512,
+    "fulltext_stats": {
+      "aging_biomarker": {
+        "correct": 4,
+        "total": 51
+      },
+      "aging_cannot_be_reversed": {
+        "correct": 49,
+        "total": 51
+      },
+      "naked_mole_rat_lifespan_explanation": {
+        "correct": 43,
+        "total": 51
+      },
+      "birds_lifespan_explanation": {
+        "correct": 36,
+        "total": 51
+      },
+      "large_animals_lifespan_explanation": {
+        "correct": 38,
+        "total": 51
+      },
+      "calorie_restriction_lifespan_explanation": {
+        "correct": 36,
+        "total": 51
+      }
+    },
+    "rag_stats": {
+      "aging_biomarker": {
+        "correct": 3,
+        "total": 43
+      },
+      "aging_cannot_be_reversed": {
+        "correct": 42,
+        "total": 43
+      },
+      "naked_mole_rat_lifespan_explanation": {
+        "correct": 36,
+        "total": 43
+      },
+      "birds_lifespan_explanation": {
+        "correct": 33,
+        "total": 43
+      },
+      "large_animals_lifespan_explanation": {
+        "correct": 35,
+        "total": 43
+      },
+      "calorie_restriction_lifespan_explanation": {
+        "correct": 31,
+        "total": 43
+      }
+    },
+    "strategies": {
+      "fulltext_only": {
+        "correct": 206,
+        "total": 306,
+        "description": "Use fulltext answers only",
+        "accuracy": 0.673202614379085
+      },
+      "rag_only": {
+        "correct": 180,
+        "total": 258,
+        "description": "Use RAG answers only",
+        "accuracy": 0.6976744186046512
+      },
+      "rag_yes_override": {
+        "correct": 178,
+        "total": 258,
+        "description": "Use fulltext, but if RAG says Yes, trust RAG",
+        "accuracy": 0.689922480620155
+      },
+      "rag_no_override": {
+        "correct": 181,
+        "total": 258,
+        "description": "Use fulltext, but if RAG says No, trust RAG",
+        "accuracy": 0.7015503875968992
+      },
+      "agree_only": {
+        "correct": 174,
+        "total": 228,
+        "description": "Use answer only when both agree, otherwise abstain",
+        "accuracy": 0.7631578947368421
+      },
+      "majority_with_confidence": {
+        "correct": 206,
+        "total": 306,
+        "description": "Use RAG if confidence > 0.9, else fulltext",
+        "accuracy": 0.673202614379085
+      },
+      "question_specific": {
+        "correct": 188,
+        "total": 274,
+        "description": "Use best performer per question type",
+        "accuracy": 0.6861313868613139
+      },
+      "conservative": {
+        "correct": 182,
+        "total": 258,
+        "description": "Prefer No unless both say Yes",
+        "accuracy": 0.7054263565891473
+      },
+      "optimistic": {
+        "correct": 179,
+        "total": 258,
+        "description": "Prefer Yes if either says Yes",
+        "accuracy": 0.6937984496124031
+      }
+    }
+  }
+}

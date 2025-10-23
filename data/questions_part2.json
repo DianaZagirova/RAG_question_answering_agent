@@ -1,11 +1,11 @@
 {
-    "Does it suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)?": "Yes, quantitatively shown / Yes, but not shown / No",
-    "Does it suggest a molecular mechanism of aging?": "Yes / No",
-    "Does it suggest a longevity intervention to test?": "Yes / No",
-    "Does it claim that aging cannot be reversed?": "Yes / No",
-    "Does it suggest a biomarker that predicts maximal lifespan differences between species?": "Yes / No",
-    "Does it explain why the naked mole rat can live 40+ years despite its small size?": "Yes / No",
-    "Does it explain why birds live much longer than mammals on average?": "Yes / No",
-    "Does it explain why large animals live longer than small ones?": "Yes / No",
-    "Does it explain why calorie restriction increases the lifespan of vertebrates?": "Yes / No"
+    "aging_biomarker":{"question":"Does it suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)? If yes, does the text provide quantitative evidence for the association or is the suggestion qualitative or hypothetical (hypothesis/discussion only)?", "answers": "Yes, quantitatively shown / Yes, but not shown / No"},
+    "molecular_mechanism_of_aging":{"question":"Does it suggest any molecular mechanism of aging?", "answers": "Yes / No"},
+    "longevity_intervention_to_test":{"question":"Does it contains claim(s) suggesting a specific longevity intervention to test?", "answers": "Yes / No"},
+    "aging_cannot_be_reversed":{"question":"Does it contains claim(s) suggesting that aging cannot be reversed?", "answers": "Yes / No"},
+    "cross_species_longevity_biomarker":{"question":"Does it contains claim(s)/examples/implies suggesting a biomarker that predicts maximal lifespan differences between species (i.e., a cross-species longevity biomarker)?", "answers": "Yes / No"},
+    "naked_mole_rat_lifespan_explanation":{"question":"Does it contains claim(s)/examples/implies explaining why potentially the naked mole rat can live a lot of years (despite its small size)? Check if there are statements about naked mole rat potentially explaining their lifespan", "answers": "Yes / No"},
+    "birds_lifespan_explanation":{"question":"Does it contains claim(s)/examples/implies explaining why potentially birds (or some specific species) live  longer than mammals (on average)? Check if lifespan of birds are mentioned", "answers": "Yes / No"},
+    "large_animals_lifespan_explanation":{"question":"Does it contains claim(s)/examples/implies explaining why potentially large animals (or some species) live longer than small ones (or some species)? Check if lifespan is mentioned in the context of body size", "answers": "Yes / No"},
+    "calorie_restriction_lifespan_explanation":{"question":"Does it contains claim(s)/examples/implies explaining why potentially calorie restriction increases the lifespan of vertebrates (or some species)? Check if calorie restriction is mentioned in the context of lifespan", "answers": "Yes / No"}
 }

@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 0.8,
+    "reasoning": "The paper discusses that a cluster of immunological parameters (the 'immunological risk phenotype') can be used to evaluate life expectancy and quality of life, referencing longitudinal studies that support this association quantitatively."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.8,
+    "reasoning": "The paper describes molecular mechanisms such as chronic inflammation, telomeric loss, oxidative damage, DNA defects, and cytokine secretion as contributors to aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not propose or suggest any specific longevity interventions to test, focusing instead on mechanisms and biomarkers."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no statement or implication in the text suggesting that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or implication of biomarkers predicting maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or discuss their lifespan relative to mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in the context of body size or large versus small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "While caloric restriction in rodents is briefly mentioned as a research focus, the paper does not explain or discuss how calorie restriction increases lifespan."
+  }
+}

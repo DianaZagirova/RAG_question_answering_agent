@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper is a theoretical review on evolutionary explanations of aging and does not suggest or provide evidence for any specific aging biomarker."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The discussion is focused on evolutionary theories and population genetics, not on molecular mechanisms of aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There are no claims or suggestions of specific longevity interventions to test; the article is conceptual and theoretical."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The paper argues that evolutionary theory predicts that aging is inevitable and cannot be reversed by simple interventions, especially in humans."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "While the paper discusses differences in lifespan between species, it does not propose or imply a specific biomarker that predicts maximal lifespan across species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan or aging."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The paper mentions that birds tend to have lower rates of senescence and longer lifespans than mammals of similar size, suggesting evolutionary explanations."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The article discusses how larger animals tend to have longer lifespans and lower rates of senescence, linking this to evolutionary theories."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not discussed in the context of lifespan or aging in this paper."
+  }
+}

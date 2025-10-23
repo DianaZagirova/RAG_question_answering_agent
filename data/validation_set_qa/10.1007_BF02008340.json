@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 1,
+    "reasoning": "The paper presents quantitative data showing increased incidence of lymphoreticular tumors in thymectomized mice compared to controls, with statistical significance provided."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The paper discusses the exhaustion of the thymus-dependent immune system as a molecular mechanism contributing to aging and increased tumor incidence."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not propose or suggest a specific intervention to test for increasing longevity."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There are no claims or suggestions in the paper that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper focuses on mice and does not discuss biomarkers that predict lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or discussion of birds or their lifespan in the paper."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not discuss lifespan in the context of body size or large versus small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned or discussed in relation to lifespan in the paper."
+  }
+}

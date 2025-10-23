@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, but not shown",
+    "confidence": 0.8,
+    "reasoning": "The paper discusses sirtuins as potential anti-aging factors and mentions their association with health and aging phenotypes, but does not provide direct quantitative evidence of sirtuins as biomarkers correlated with mortality or age-related conditions."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper extensively discusses molecular mechanisms, including sirtuin-mediated deacetylation, NAD+ metabolism, DNA repair, and anti-inflammatory pathways, as contributors to aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper suggests testing sirtuin-activating compounds and NAD+ boosters as potential longevity interventions."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not claim that aging cannot be reversed; rather, it discusses mechanisms to slow or potentially reverse aspects of aging."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "There is no mention or implication of a biomarker predicting maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan explanation."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or provide explanations for their lifespan relative to mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of body size in relation to lifespan or explanations involving large versus small animals."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper provides mechanistic explanations for how calorie restriction can increase lifespan, particularly via sirtuin activation and related pathways."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not propose or provide evidence for a specific measurable biomarker of aging; it discusses a theoretical mechanism involving free radicals."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper proposes that aging is caused by deleterious side attacks of free radicals (such as OH and HO2) on cell constituents."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper suggests testing radiation protection compounds (e.g., cysteine) as possible interventions to slow aging and prolong life."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not claim that aging cannot be reversed; instead, it discusses possible interventions to slow aging."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or implication of a biomarker that predicts lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The naked mole rat is not mentioned or discussed in the context of lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or discuss why they might live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Although metabolic rate and species differences are mentioned, there is no explicit explanation of why large animals live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned or discussed in relation to lifespan in the paper."
+  }
+}

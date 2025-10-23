@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, but not shown",
+    "confidence": 0.9,
+    "reasoning": "The paper discusses autophagic potential and levels of autophagy-related proteins as correlating with aging and age-related conditions, but notes the lack of suitable assays for measuring autophagic flux in living humans and does not provide quantitative evidence for their use as biomarkers."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper details molecular mechanisms by which autophagy impacts aging, including the regulation of protein and organelle quality control, mitochondrial function, and signaling pathways such as mTOR, SIRT1, and FOXO."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper suggests interventions such as caloric restriction, rapamycin, spermidine, and resveratrol, all of which stimulate autophagy and are discussed as longevity interventions to test."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not claim that aging cannot be reversed; in fact, it discusses interventions that may delay or partially reverse aspects of aging."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper does not discuss or imply a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or discussion of naked mole rats or explanations for their lifespan."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or discuss why birds live longer than mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in the context of body size or why large animals live longer than small ones."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses in detail how calorie restriction increases lifespan in various species and links this effect mechanistically to the induction of autophagy."
+  }
+}

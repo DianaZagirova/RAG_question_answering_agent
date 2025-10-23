@@ -1,0 +1,47 @@
+{
+  "aging_biomarker": {
+    "answer": "Yes, quantitatively shown",
+    "confidence": 0.95,
+    "reasoning": "The paper reports that both random somatic and heteroplasmic mtDNA mutations are associated with older age, and provides quantitative evidence from their own and referenced studies showing this association."
+  },
+  "molecular_mechanism_of_aging": {
+    "answer": "Yes",
+    "confidence": 1,
+    "reasoning": "The paper discusses in detail the molecular mechanisms involving mtDNA polymerase γ errors, oxidative damage, and clonal expansion of mtDNA mutations as contributors to aging."
+  },
+  "longevity_intervention_to_test": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses mechanisms and theories but does not propose or claim a specific longevity intervention to test."
+  },
+  "aging_cannot_be_reversed": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There are no statements or claims in the paper suggesting that aging cannot be reversed."
+  },
+  "cross_species_longevity_biomarker": {
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "While the paper mentions studies in Drosophila and mice, it does not suggest or claim a biomarker that predicts maximal lifespan differences between species."
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no mention or discussion of naked mole rats or explanations for their lifespan in the paper."
+  },
+  "birds_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "The paper does not mention birds or discuss their lifespan relative to mammals."
+  },
+  "large_animals_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "There is no discussion of lifespan in the context of body size or explanations for why large animals may live longer."
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "answer": "No",
+    "confidence": 1,
+    "reasoning": "Calorie restriction is not mentioned or discussed in the context of lifespan in the paper."
+  }
+}

@@ -1,0 +1,957 @@
+{
+  "aging_biomarker": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)? If yes, does the text provide quantitative evidence for the association or is the suggestion qualitative or hypothetical (hypothesis/discussion only)?",
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The provided context discusses aging in terms of evolutionary hypotheses, population structure, and pathogen control, but does not suggest any specific measurable biomarker of aging associated with mortality or age-related conditions. There is mention of mechanisms and trade-offs (e.g., immunity, senescence, fecundity-longevity) [Source 5, Source 10], but no entity is proposed or evaluated as a biomarker, nor is any quantitative association presented. The discussion is theoretical and hypothesis-driven, not focused on biomarker identification or validation.",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The provided context discusses aging in terms of evolutionary hypotheses, population structure, and pathogen control, but does not suggest any specific measurable biomarker of aging associated with mortality or age-related conditions. There is mention of mechanisms and trade-offs (e.g., immunity, senescence, fecundity-longevity) [Source 5, Source 10], but no entity is proposed or evaluated as a biomarker, nor is any quantitative association presented. The discussion is theoretical and hypothesis-driven, not focused on biomarker identification or validation.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes, quantitatively shown",
+      "Yes, but not shown",
+      "No"
+    ],
+    "question_number": 1,
+    "question_text": "Does it suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)? If yes, does the text provide quantitative evidence for the association or is the suggestion qualitative or hypothetical (hypothesis/discussion only)?",
+    "question_key": "aging_biomarker",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it suggest an aging biomarker (measurable entity reflecting aging pace or health state, associated with mortality or age-related conditions)? If yes, does the text provide quantitative evidence for the association or is the suggestion qualitative or hypothetical (hypothesis/discussion only)?",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5226870179176331
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.47682392597198486
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.47183072566986084
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.46739792823791504
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4274975061416626
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.42652958631515503
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.38591742515563965
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.36496108770370483
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.33589375019073486
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.3188958764076233
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.27153515815734863
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.22703737020492554
+      }
+    ],
+    "n_sources": 12,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 5315,
+        "completion_tokens": 135,
+        "total_tokens": 5450
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "molecular_mechanism_of_aging": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it suggest a molecular mechanism of aging? \u2014that is, a specific biological process, pathway, or set of molecular events (involving genes, proteins, metabolites, signaling pathways, etc.) that contributes to or explains aspects of the aging process?",
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "The paper discusses evolutionary hypotheses for aging, including antagonistic pleiotropy, disposable soma, and pathogen control, and references mechanistic connections between senescence and immunity (e.g., immunosenescence, interaction with chronic infections) [Source 6, Source 9]. However, it does not propose or detail a specific molecular mechanism (such as a defined pathway involving particular genes, proteins, or metabolites) that explains aging. Instead, it focuses on evolutionary and ecological perspectives, and notes that the mechanisms of aging remain unclear [Source 2].",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The paper discusses evolutionary hypotheses for aging, including antagonistic pleiotropy, disposable soma, and pathogen control, and references mechanistic connections between senescence and immunity (e.g., immunosenescence, interaction with chronic infections) [Source 6, Source 9]. However, it does not propose or detail a specific molecular mechanism (such as a defined pathway involving particular genes, proteins, or metabolites) that explains aging. Instead, it focuses on evolutionary and ecological perspectives, and notes that the mechanisms of aging remain unclear [Source 2].\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 2,
+    "question_text": "Does it suggest a molecular mechanism of aging? \u2014that is, a specific biological process, pathway, or set of molecular events (involving genes, proteins, metabolites, signaling pathways, etc.) that contributes to or explains aspects of the aging process?",
+    "question_key": "molecular_mechanism_of_aging",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it suggest a molecular mechanism of aging? \u2014that is, a specific biological process, pathway, or set of molecular events (involving genes, proteins, metabolites, signaling pathways, etc.) that contributes to or explains aspects of the aging process?",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6366495490074158
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5702383518218994
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5463910102844238
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.47289031744003296
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.47184276580810547
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.3708966374397278
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.36595356464385986
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.35916823148727417
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.3532143235206604
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.3132520318031311
+      }
+    ],
+    "n_sources": 10,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 4658,
+        "completion_tokens": 139,
+        "total_tokens": 4797
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "longevity_intervention_to_test": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s) suggesting a specific longevity intervention to test?",
+    "answer": "No",
+    "confidence": 0.9,
+    "reasoning": "The paper discusses evolutionary theories of aging, the pathogen control hypothesis, and references various studies on lifespan and immunity, but does not make explicit claims suggesting a specific longevity intervention to test. The closest it comes is in [Source 4], which states that knowledge of evolutionary origins may instruct strategies to develop anti-aging interventions, but this is a general statement and not a specific intervention proposal. Other sources focus on theoretical and mechanistic discussions rather than intervention claims.",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The paper discusses evolutionary theories of aging, the pathogen control hypothesis, and references various studies on lifespan and immunity, but does not make explicit claims suggesting a specific longevity intervention to test. The closest it comes is in [Source 4], which states that knowledge of evolutionary origins may instruct strategies to develop anti-aging interventions, but this is a general statement and not a specific intervention proposal. Other sources focus on theoretical and mechanistic discussions rather than intervention claims.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 3,
+    "question_text": "Does it contains claim(s) suggesting a specific longevity intervention to test?",
+    "question_key": "longevity_intervention_to_test",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s) suggesting a specific longevity intervention to test?",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5962284803390503
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5957194566726685
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5412335991859436
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5192842483520508
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.46499884128570557
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4593106508255005
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4434770345687866
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4433380365371704
+      }
+    ],
+    "n_sources": 8,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 3651,
+        "completion_tokens": 119,
+        "total_tokens": 3770
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "aging_cannot_be_reversed": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s) suggesting that aging cannot be reversed?",
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "The paper discusses the evolutionary origins and mechanisms of aging, including hypotheses that aging may be adaptive or a trade-off, and explores the possibility of anti-aging interventions [Source 3]. It does not claim that aging cannot be reversed; rather, it suggests that understanding aging's evolutionary origins could help develop anti-aging strategies. No explicit statement is found in the provided context asserting that aging is irreversible.",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The paper discusses the evolutionary origins and mechanisms of aging, including hypotheses that aging may be adaptive or a trade-off, and explores the possibility of anti-aging interventions [Source 3]. It does not claim that aging cannot be reversed; rather, it suggests that understanding aging's evolutionary origins could help develop anti-aging strategies. No explicit statement is found in the provided context asserting that aging is irreversible.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 4,
+    "question_text": "Does it contains claim(s) suggesting that aging cannot be reversed?",
+    "question_key": "aging_cannot_be_reversed",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s) suggesting that aging cannot be reversed?",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6056864857673645
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5649268627166748
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5507217049598694
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5138503909111023
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4935895800590515
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.45778822898864746
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.42599231004714966
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.42240768671035767
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.39478302001953125
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.34785497188568115
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.3183485269546509
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.25235414505004883
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.20713019371032715
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.17778640985488892
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.15951555967330933
+      }
+    ],
+    "n_sources": 15,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 6084,
+        "completion_tokens": 107,
+        "total_tokens": 6191
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "cross_species_longevity_biomarker": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies suggesting a biomarker that predicts maximal lifespan differences between species (i.e., a cross-species longevity biomarker)?",
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "None of the provided sources mention a specific biomarker that predicts maximal lifespan differences between species. The paper discusses evolutionary theories, trade-offs, and mechanistic hypotheses for aging, including pathogen control, but does not claim, exemplify, or imply the existence of a cross-species longevity biomarker. References to mechanisms such as immunity, senescence, and genetic pathways (e.g., TOR signaling, IGF-I deficiency) are present, but these are not presented as universal biomarkers for maximal lifespan across species [Source 3], [Source 10].",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"None of the provided sources mention a specific biomarker that predicts maximal lifespan differences between species. The paper discusses evolutionary theories, trade-offs, and mechanistic hypotheses for aging, including pathogen control, but does not claim, exemplify, or imply the existence of a cross-species longevity biomarker. References to mechanisms such as immunity, senescence, and genetic pathways (e.g., TOR signaling, IGF-I deficiency) are present, but these are not presented as universal biomarkers for maximal lifespan across species [Source 3], [Source 10].\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 5,
+    "question_text": "Does it contains claim(s)/examples/implies suggesting a biomarker that predicts maximal lifespan differences between species (i.e., a cross-species longevity biomarker)?",
+    "question_key": "cross_species_longevity_biomarker",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies suggesting a biomarker that predicts maximal lifespan differences between species (i.e., a cross-species longevity biomarker)?",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6917009949684143
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6870341897010803
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6807042956352234
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6593706607818604
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6517712473869324
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6108730435371399
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5924542546272278
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.578588604927063
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.5579219460487366
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5531783699989319
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.5232810974121094
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4407520294189453
+      }
+    ],
+    "n_sources": 12,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 5238,
+        "completion_tokens": 140,
+        "total_tokens": 5378
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "naked_mole_rat_lifespan_explanation": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially the naked mole rat can live a lot of years (despite its small size)? Check if there are statements about naked mole rat potentially explaining their lifespan",
+    "answer": "Yes",
+    "confidence": 0.8,
+    "reasoning": "The context discusses naked mole-rats in relation to lifespan and pathogen susceptibility, specifically mentioning their extreme susceptibility to infection and unexpected features of immunity [Source 3, Source 5]. The paper raises the question 'Are naked mole-rats hypersensitive to infection?' and suggests that their social structure and immune system may be relevant to their longevity [Source 5]. While it does not provide a definitive mechanistic explanation, it does imply that the naked mole-rat's lifespan is potentially explained by factors such as pathogen susceptibility and social structure, thus addressing why they can live many years despite their small size.",
+    "raw_answer": "```json\n{\n  \"answer\": \"Yes\",\n  \"confidence\": 0.8,\n  \"reasoning\": \"The context discusses naked mole-rats in relation to lifespan and pathogen susceptibility, specifically mentioning their extreme susceptibility to infection and unexpected features of immunity [Source 3, Source 5]. The paper raises the question 'Are naked mole-rats hypersensitive to infection?' and suggests that their social structure and immune system may be relevant to their longevity [Source 5]. While it does not provide a definitive mechanistic explanation, it does imply that the naked mole-rat's lifespan is potentially explained by factors such as pathogen susceptibility and social structure, thus addressing why they can live many years despite their small size.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 6,
+    "question_text": "Does it contains claim(s)/examples/implies explaining why potentially the naked mole rat can live a lot of years (despite its small size)? Check if there are statements about naked mole rat potentially explaining their lifespan",
+    "question_key": "naked_mole_rat_lifespan_explanation",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially the naked mole rat can live a lot of years (despite its small size)? Check if there are statements about naked mole rat potentially explaining their lifespan",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.7304697036743164
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6952259540557861
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6580904126167297
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5988199710845947
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5197064876556396
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.512691080570221
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.5046442151069641
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.49955153465270996
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4871715307235718
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.4779411554336548
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4404337406158447
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.3244333863258362
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.31537044048309326
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.2780311107635498
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.27308380603790283
+      }
+    ],
+    "n_sources": 15,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 6113,
+        "completion_tokens": 149,
+        "total_tokens": 6262
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "birds_lifespan_explanation": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially birds live much longer than mammals on average? Check if lifespan of birds are mentioned",
+    "answer": "Yes",
+    "confidence": 0.8,
+    "reasoning": "The context includes references to lifespan in birds and mammals, specifically citing studies that compare lifespan variation between these groups (e.g., Healy et al. (2014) 'Ecology and mode-of-life explain lifespan variation in birds and mammals' [Source 3]). Additionally, Ricklefs & Cadena (2007) is cited for lifespan in populations of mammals and birds [Source 2]. These references imply that the paper discusses lifespan differences and provides examples or claims relevant to why birds may live longer than mammals on average.",
+    "raw_answer": "```json\n{\n  \"answer\": \"Yes\",\n  \"confidence\": 0.8,\n  \"reasoning\": \"The context includes references to lifespan in birds and mammals, specifically citing studies that compare lifespan variation between these groups (e.g., Healy et al. (2014) 'Ecology and mode-of-life explain lifespan variation in birds and mammals' [Source 3]). Additionally, Ricklefs & Cadena (2007) is cited for lifespan in populations of mammals and birds [Source 2]. These references imply that the paper discusses lifespan differences and provides examples or claims relevant to why birds may live longer than mammals on average.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 7,
+    "question_text": "Does it contains claim(s)/examples/implies explaining why potentially birds live much longer than mammals on average? Check if lifespan of birds are mentioned",
+    "question_key": "birds_lifespan_explanation",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially birds live much longer than mammals on average? Check if lifespan of birds are mentioned",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.7781726717948914
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.7332642078399658
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6792746186256409
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6153936982154846
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6134504079818726
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.5752800107002258
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5641350150108337
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.558501660823822
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5541645288467407
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5467482805252075
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4676225185394287
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.3756551146507263
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.36843550205230713
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.36393702030181885
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.30534642934799194
+      }
+    ],
+    "n_sources": 15,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 6099,
+        "completion_tokens": 136,
+        "total_tokens": 6235
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "large_animals_lifespan_explanation": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially large animals live longer than small ones? Check if lifespan is mentioned in the context of body size",
+    "answer": "Yes",
+    "confidence": 0.9,
+    "reasoning": "The context explicitly mentions lifespan in relation to body size, such as in [Source 2] and [Source 8], which reference the 'size-lifespan trade-off' and discuss why large dogs die young. Additionally, [Source 3] cites a paper on how ecology and mode-of-life explain lifespan variation in birds and mammals, which implies a connection between body size and lifespan. These examples indicate that the paper contains claims or examples explaining lifespan in the context of body size.",
+    "raw_answer": "```json\n{\n  \"answer\": \"Yes\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The context explicitly mentions lifespan in relation to body size, such as in [Source 2] and [Source 8], which reference the 'size-lifespan trade-off' and discuss why large dogs die young. Additionally, [Source 3] cites a paper on how ecology and mode-of-life explain lifespan variation in birds and mammals, which implies a connection between body size and lifespan. These examples indicate that the paper contains claims or examples explaining lifespan in the context of body size.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 8,
+    "question_text": "Does it contains claim(s)/examples/implies explaining why potentially large animals live longer than small ones? Check if lifespan is mentioned in the context of body size",
+    "question_key": "large_animals_lifespan_explanation",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially large animals live longer than small ones? Check if lifespan is mentioned in the context of body size",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.7191240191459656
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.7065557241439819
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6527280807495117
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5830731391906738
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5712028741836548
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.567669153213501
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5647674202919006
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.551276445388794
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5279770493507385
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.5252962112426758
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.5137204527854919
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4310513138771057
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4225446581840515
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.39697039127349854
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.31519269943237305
+      }
+    ],
+    "n_sources": 15,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 6102,
+        "completion_tokens": 127,
+        "total_tokens": 6229
+      },
+      "finish_reason": "stop"
+    }
+  },
+  "calorie_restriction_lifespan_explanation": {
+    "question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially calorie restriction increases the lifespan of vertebrates? Check if calorie restriction is mentioned in the context of lifespan",
+    "answer": "No",
+    "confidence": 0.95,
+    "reasoning": "None of the provided sources mention calorie restriction in the context of lifespan or provide claims/examples/implies explaining why calorie restriction increases the lifespan of vertebrates. The references and discussions focus on other mechanisms and hypotheses for lifespan evolution, such as pathogen control, trade-offs, and genetic factors, but do not mention calorie restriction at all. [Source 1], [Source 7], and others list studies on lifespan regulation, but calorie restriction is not discussed.",
+    "raw_answer": "```json\n{\n  \"answer\": \"No\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"None of the provided sources mention calorie restriction in the context of lifespan or provide claims/examples/implies explaining why calorie restriction increases the lifespan of vertebrates. The references and discussions focus on other mechanisms and hypotheses for lifespan evolution, such as pathogen control, trade-offs, and genetic factors, but do not mention calorie restriction at all. [Source 1], [Source 7], and others list studies on lifespan regulation, but calorie restriction is not discussed.\"\n}\n```",
+    "parse_error": false,
+    "answer_options": [
+      "Yes",
+      "No"
+    ],
+    "question_number": 9,
+    "question_text": "Does it contains claim(s)/examples/implies explaining why potentially calorie restriction increases the lifespan of vertebrates? Check if calorie restriction is mentioned in the context of lifespan",
+    "question_key": "calorie_restriction_lifespan_explanation",
+    "prompt_question": "For the paper with DOI 10.1016/j.tree.2022.08.003, Does it contains claim(s)/examples/implies explaining why potentially calorie restriction increases the lifespan of vertebrates? Check if calorie restriction is mentioned in the context of lifespan",
+    "sources": [
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6936919093132019
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6779488921165466
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.6354776620864868
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5659377574920654
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5458456873893738
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Highlights",
+        "relevance": 0.544782817363739
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.5257147550582886
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.49671781063079834
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.49322646856307983
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Death",
+        "relevance": 0.47294628620147705
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.4623311758041382
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.35632991790771484
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.33929377794265747
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.3317831754684448
+      },
+      {
+        "doi": "10.1016/j.tree.2022.08.003",
+        "title": "Could aging evolve as a pathogen control strategy?",
+        "section": "Glossary",
+        "relevance": 0.32592618465423584
+      }
+    ],
+    "n_sources": 15,
+    "llm_metadata": {
+      "model": "gpt-4.1-2025-04-14",
+      "usage": {
+        "prompt_tokens": 6103,
+        "completion_tokens": 119,
+        "total_tokens": 6222
+      },
+      "finish_reason": "stop"
+    }
+  }
+}
