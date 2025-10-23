@@ -6,7 +6,7 @@
 
 ## 🎯 Project Overview
 
-This project tackles the Stage 5 of the **"Agentic AI Against Aging"** hackathon challenge of **identifying all possible aging theories** from scientific literature (PART 2 of the hackthon task). Our system combines state-of-the-art RAG techniques with LLM-based voting to answer 9 critical questions about aging research across 15,813 validated papers.
+This project tackles the Stage 5 of the **"Agentic AI Against Aging"** hackathon challenge of **identifying all possible aging theories** from scientific literature (PART 2 of the hackthon task - question answering). Our system combines state-of-the-art RAG techniques with LLM-based voting to answer 9 critical questions about aging research across 15,813 validated papers.
 
 
 ### 🏆 Key Achievements
