@@ -6,7 +6,8 @@
 
 ## 🎯 Project Overview
 
-This project tackles the **"Agentic AI Against Aging"** hackathon challenge of **identifying all possible aging theories** from scientific literature. Our system combines state-of-the-art RAG techniques with LLM-based voting to answer 9 critical questions about aging research across 15,813 validated papers.
+This project tackles the Stage 5 of the **"Agentic AI Against Aging"** hackathon challenge of **identifying all possible aging theories** from scientific literature (PART 2 of the hackthon task). Our system combines state-of-the-art RAG techniques with LLM-based voting to answer 9 critical questions about aging research across 15,813 validated papers.
+
 
 ### 🏆 Key Achievements
 
@@ -148,9 +149,14 @@ This project tackles the **"Agentic AI Against Aging"** hackathon challenge of *
 
 #### A. **Query Contextualization**
 
-**Challenge**: User questions are often too vague for precise retrieval.
+**Challenge**: The initial question are too dissimiliar to the chunks from the database (parts of the scientific papers). Thus, questions should be reformated to mimic the scientific paper part to enable more accurate search in the database.
 
-**Our Solution**: Predefined scientific queries for each question type
+**Our Solution**: Contextualize the query with LLM - check for src/core/query_preprocessor.py
+This methods was selected across several tested methodologies that are described in the file. We teseted appraoches, validated on the golden sets and then identify that LLM contextualization provides the best reulsts. 
+
+Thus, questions converted to small paragraphs matching the size of chunks in the database. 
+Examples (check data/queries_extended.json): 
+
 ```json
 {
   "aging_biomarker": [
@@ -161,8 +167,7 @@ This project tackles the **"Agentic AI Against Aging"** hackathon challenge of *
 ```
 
 **Benefits**:
-- ✅ No LLM calls for query enhancement (faster, cheaper)
-- ✅ Consistent, reproducible queries
+- ✅ Make it once as we have the same questions for all articles (faster, cheaper)
 - ✅ Domain-optimized by experts
 
 #### B. **Multi-Query Retrieval**
