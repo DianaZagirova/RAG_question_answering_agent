@@ -327,9 +327,11 @@ rag_agent/
 │   └── utils/                         # Utilities
 │       └── chunker_advanced.py        # Alternative chunkers
 ├── scripts/                           # Executable scripts
-│   ├── run_rag_on_all_papers.py      # Batch RAG processing
+│   ├── batch_rag_fast.py             # ⭐ MAIN: Fast batch RAG processing
+│   ├── export_sample_results.py      # Export sample results to JSON
 │   ├── llm_voter.py                  # LLM voting system
 │   ├── rag_answer.py                 # Single paper RAG
+│   ├── run_rag_on_all_papers.py      # Legacy batch processing
 │   └── analyze_rag_results.py        # Results analysis
 ├── config/
 │   └── optimal_config.py             # Optimal parameters
@@ -415,6 +417,29 @@ python demo.py
 
 ---
 
+## 🚀 Quick Reference
+
+### Main Script: `batch_rag_fast.py`
+
+**Process all papers with optimized RAG:**
+```bash
+python scripts/batch_rag_fast.py \
+  --evaluations-db /path/to/evaluations.db \
+  --papers-db /path/to/papers.db \
+  --results-db rag_results_fast.db
+```
+
+**Key Points:**
+- ⭐ **Main production script** for batch RAG processing
+- ⚡ 10x faster than legacy `run_rag_on_all_papers.py`
+- 📊 Processes 16,321 papers → 146,889 answers
+- 💾 Results in `rag_results_fast.db` (not committed, see `data/sample_rag_results.json`)
+- 🔄 Supports incremental processing (resume from interruptions)
+
+See [Example 2](#example-2-batch-processing-all-papers-main-script) for detailed usage.
+
+---
+
 ## 📖 Usage Examples
 
 ### Example 1: Answer Single Question
@@ -448,15 +473,91 @@ print(f"Confidence: {result['confidence']}")
 print(f"Sources: {len(result['sources'])} chunks")
 ```
 
-### Example 2: Batch Processing All Papers
+### Example 2: Batch Processing All Papers (MAIN SCRIPT)
+
+**⭐ Use `batch_rag_fast.py` - the optimized production script:**
 
 ```bash
-# Process all validated papers through RAG
-python scripts/run_rag_on_all_papers.py \
+# Process all validated papers through RAG (optimized version)
+python scripts/batch_rag_fast.py \
   --evaluations-db /path/to/evaluations.db \
   --papers-db /path/to/papers.db \
-  --results-db rag_results.db
+  --results-db rag_results_fast.db \
+  --max-concurrent 10 \
+  --tpm-limit 180000 \
+  --rpm-limit 450
 ```
+
+**Key Features:**
+- ⚡ **10x faster** than legacy script with async processing
+- 🔄 **Concurrent processing** (default: 10 papers at once)
+- 📊 **Rate limiting** respects OpenAI TPM/RPM limits
+- 💾 **Batch database operations** (50x faster I/O)
+- 🧠 **Pre-computed embeddings** for all queries
+- 🔒 **Thread-safe** ChromaDB access
+- 📈 **Incremental processing** (resume from interruptions)
+
+**Input:**
+- `--evaluations-db`: Database with paper validation results
+- `--papers-db`: Database with paper full texts and abstracts
+- `--questions-file`: JSON file with questions (default: `data/questions_part2.json`)
+- `--predefined-queries`: Pre-contextualized queries (default: `data/queries_extended.json`)
+
+**Output:**
+- `rag_results_fast.db`: SQLite database with all results (see schema below)
+- Contains 3 tables: `paper_metadata`, `paper_answers`, `processing_log`
+
+**Performance:**
+- Processes ~15,000 papers in 8-12 hours
+- ~3-7 seconds per paper (including rate limiting)
+- Handles 16,321 papers with 9 questions each = 146,889 answers
+
+**Advanced Options:**
+```bash
+python scripts/batch_rag_fast.py \
+  --evaluations-db /path/to/evaluations.db \
+  --papers-db /path/to/papers.db \
+  --results-db rag_results_fast.db \
+  --questions-file data/questions_part2.json \
+  --predefined-queries data/queries_extended.json \
+  --max-concurrent 10 \              # Concurrent papers (default: 10)
+  --tpm-limit 180000 \                # Tokens per minute (default: 180000)
+  --rpm-limit 450 \                   # Requests per minute (default: 450)
+  --batch-size 50 \                   # DB batch size (default: 50)
+  --temperature 0.2 \                 # LLM temperature (default: 0.2)
+  --max-tokens 2000 \                 # Max response tokens (default: 2000)
+  --limit 100 \                       # Process only N papers (for testing)
+  --single-query                      # Use only 1st query variant (faster)
+```
+
+**Command-line Options:**
+- `--evaluations-db`: Path to paper validation database
+- `--papers-db`: Path to papers database with full texts
+- `--results-db`: Output database path (default: `rag_results_fast.db`)
+- `--questions-file`: Questions JSON file (default: `data/questions_part2.json`)
+- `--predefined-queries`: Pre-contextualized queries (default: `data/queries_extended.json`)
+- `--max-concurrent`: Number of papers to process concurrently (default: 10)
+- `--tpm-limit`: OpenAI tokens per minute limit (default: 180000 for gpt-4.1-mini)
+- `--rpm-limit`: OpenAI requests per minute limit (default: 450)
+- `--batch-size`: Database batch save size (default: 50)
+- `--temperature`: LLM temperature for answer generation (default: 0.2)
+- `--max-tokens`: Maximum tokens for LLM response (default: 2000)
+- `--limit`: Process only first N papers (useful for testing)
+- `--single-query`: Use only first query variant per question (faster, slightly lower quality)
+- `--collection-name`: ChromaDB collection name (default: `scientific_papers_optimal`)
+- `--persist-dir`: ChromaDB persistence directory (default: `./chroma_db_optimal`)
+
+**How It Works:**
+1. **Pre-compute embeddings**: All query embeddings are computed once at startup
+2. **Load papers**: Optimized JOIN query loads validated papers with full text
+3. **Async processing**: Process multiple papers concurrently with rate limiting
+4. **For each paper**:
+   - Retrieve relevant chunks using vectorized similarity computation
+   - Build single prompt with all questions and contexts
+   - Make one LLM call to answer all 9 questions at once
+   - Parse and validate JSON response
+   - Batch save to database
+5. **Incremental**: Automatically resumes from last processed paper
 
 ### Example 3: LLM Voting (Combine RAG + Full-Text)
 
@@ -515,7 +616,49 @@ python scripts/llm_voter.py \
 
 ### Database Schema
 
-**combined_results_final.db**:
+**rag_results_fast.db** (RAG processing results):
+```sql
+-- Paper metadata
+paper_metadata (
+  doi TEXT PRIMARY KEY,
+  pmid TEXT,
+  title TEXT,
+  abstract TEXT,
+  validation_result TEXT,
+  confidence_score INTEGER,
+  used_full_text BOOLEAN,
+  n_chunks_retrieved INTEGER,
+  timestamp TEXT
+)
+
+-- Question answers (one row per paper-question)
+paper_answers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  doi TEXT,
+  question_key TEXT,
+  question_text TEXT,
+  answer TEXT,
+  confidence REAL,
+  reasoning TEXT,
+  parse_error BOOLEAN,
+  n_sources INTEGER,
+  UNIQUE(doi, question_key),
+  FOREIGN KEY(doi) REFERENCES paper_metadata(doi)
+)
+
+-- Processing log
+processing_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  doi TEXT,
+  status TEXT,
+  error_message TEXT,
+  timestamp TEXT
+)
+```
+
+**⚠️ Note:** The full `rag_results_fast.db` database (~76 MB, 16,321 papers) is **not committed to the repository** due to size constraints. A sample of 50 papers is available in `data/sample_rag_results.json` for reference.
+
+**combined_results_final.db** (after LLM voting):
 ```sql
 -- Short view (one row per paper)
 combined_answers_short (
@@ -616,6 +759,25 @@ Retrieval (Fast, Cheap)  +  Generation (Smart, Contextual)
 3. **T0003** - Somatic DNA Damage Theory (112 papers)
 4. **T0004** - Mitochondrial ROS-Induced Mitochondrial Decline Theory (84 papers)
 5. **T0005** - Insulin/IGF-1 Signaling Disposable Soma Theory (72 papers)
+
+---
+
+## 📦 Sample Results
+
+Since the full `rag_results_fast.db` database is not committed to the repository (76 MB, 16,321 papers), we provide a sample export:
+
+**`data/sample_rag_results.json`** - 50 randomly selected papers with complete RAG results
+
+To generate your own sample:
+```bash
+python scripts/export_sample_results.py
+```
+
+This exports 50 random papers with:
+- Paper metadata (DOI, PMID, title, abstract)
+- All 9 question-answer pairs
+- Confidence scores and reasoning
+- Number of source chunks used
 
 ---
 
