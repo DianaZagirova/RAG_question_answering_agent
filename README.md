@@ -773,11 +773,67 @@ To generate your own sample:
 python scripts/export_sample_results.py
 ```
 
-This exports 50 random papers with:
-- Paper metadata (DOI, PMID, title, abstract)
-- All 9 question-answer pairs
-- Confidence scores and reasoning
-- Number of source chunks used
+### Example Output Structure
+
+Each paper in the sample JSON has the following structure:
+
+```json
+{
+  "doi": "10.1016/j.neuropsychologia.2015.12.027",
+  "pmid": "26724229",
+  "title": "Modulation of the inter-hemispheric processing of semantic information during normal aging...",
+  "abstract": "We evaluated the effect of normal aging on the inter-hemispheric processing...",
+  "validation_result": "valid",
+  "confidence_score": 7,
+  "used_full_text": false,
+  "n_chunks_retrieved": 90,
+  "timestamp": "2025-10-21T15:31:31.756852",
+  "answers": {
+    "aging_biomarker": {
+      "question_text": "Does it suggest an aging biomarker...",
+      "answer": "No",
+      "confidence": 0.9,
+      "reasoning": "The paper discusses inter-hemispheric processing...",
+      "n_sources": 10
+    },
+    "molecular_mechanism_of_aging": {
+      "question_text": "Does it suggest any molecular mechanism of aging?",
+      "answer": "No",
+      "confidence": 0.95,
+      "reasoning": "The text does not mention or suggest any molecular mechanisms...",
+      "n_sources": 10
+    }
+    // ... 7 more questions
+  }
+}
+```
+
+### Field Descriptions
+
+**Paper-level fields:**
+- `doi` (string): Digital Object Identifier - unique paper identifier
+- `pmid` (string): PubMed ID - alternative identifier
+- `title` (string): Full paper title
+- `abstract` (string): Paper abstract text
+- `validation_result` (string): Paper validation status (`"valid"`, `"doubted"`, or `"not_valid"`)
+- `confidence_score` (integer): Validation confidence score (1-10)
+- `used_full_text` (boolean): Whether full text was available for RAG processing
+- `n_chunks_retrieved` (integer): Total number of text chunks retrieved across all questions
+- `timestamp` (string): ISO format timestamp of when the paper was processed
+
+**Answer-level fields** (nested under each question key):
+- `question_text` (string): Full text of the question asked
+- `answer` (string): LLM's answer - one of the predefined options for that question
+  - Examples: `"Yes"`, `"No"`, `"Yes, quantitatively shown"`, `"Yes, but not shown"`
+- `confidence` (float): LLM's confidence in the answer (0.0 to 1.0)
+  - 0.9-1.0: Very high confidence
+  - 0.7-0.89: High confidence
+  - 0.5-0.69: Moderate confidence
+  - <0.5: Low confidence
+- `reasoning` (string): LLM's explanation for the answer (1-2 sentences)
+  - If directly stated in text: `"directly stated"`
+  - Otherwise: brief justification based on retrieved context
+- `n_sources` (integer): Number of text chunks used to answer this specific question (typically 10)
 
 ---
 
